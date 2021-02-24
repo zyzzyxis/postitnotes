@@ -1,3 +1,18 @@
 // Place all the styles related to the notes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.notes-container{
+  max-width: 800px;
+  margin: auto;
+  background-color: lavender;
+  padding: 10px;
+}
+
+.note-container{
+  margin: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 2px 2px 4px 4px plum;
+  background-color: white;
+}
