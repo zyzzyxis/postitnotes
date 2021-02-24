@@ -10,15 +10,20 @@ class NotesController < ApplicationController
     render component: "Note"
   end
 
-  # todo delete a specific note
+  ##// todo delete a specific note
   def destroy 
+    note = Note.find(params[:id])
+    note.destroy
+    redirect_to root_path
   end
 
-  def udpate
+  def edit
+    render component: "EditNoteForm"
   end
 
   #todo return a form to create a new note
   def new
+    render component: "NewNoteForm"
   end
 
 
