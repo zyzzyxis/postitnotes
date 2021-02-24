@@ -18,7 +18,8 @@ class NotesController < ApplicationController
   end
 
   def edit
-    render component: "EditNoteForm"
+    note = Note.find(params[:id])
+    render component: "EditNoteForm", props: {note: note}
   end
 
   #todo return a form to create a new note

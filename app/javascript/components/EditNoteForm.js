@@ -1,10 +1,11 @@
 import React from 'react'
 
-const EditNoteForm = () =>{
+const EditNoteForm = (props) =>{
   return(
     <div>
       <a href='/'>Home</a>
-      <h1>Enter your new note here:</h1>
+      <p>Id Here:{props.note.id} </p>
+      <h1>Edit your note here:</h1>
       <form action='/notes' method='post'>
         <p>Note Name</p>
         <input type='text' name='note[title]'/>
