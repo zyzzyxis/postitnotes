@@ -26,5 +26,19 @@ class NotesController < ApplicationController
     render component: "NewNoteForm"
   end
 
+  def create
+    note = Note.new(note_params)
+    if note.save
+        redirect_to root_path
+    else
+      render component: "NewNoteForm"
+    end
+  end
+
+  private
+
+  def note_params
+    params.require(:note).permit(:title, :description)
+  end
 
 end
