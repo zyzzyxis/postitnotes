@@ -7,7 +7,8 @@ class NotesController < ApplicationController
 
   # todo show a specific note
   def show
-    render component: "Note"
+    note = Note.find(params[:id])
+    render component: "Note", props: {note: note}
   end
 
   ##// todo delete a specific note
@@ -20,6 +21,15 @@ class NotesController < ApplicationController
   def edit
     note = Note.find(params[:id])
     render component: "EditNoteForm", props: {note: note}
+  end
+
+  def update
+    note = Note.find(params[:id])
+    if note.update(note_params)
+      redirect_to root_path
+  else
+    render component: "EditNoteForm", props: {note: note}
+  end
   end
 
   #todo return a form to create a new note
